@@ -8,6 +8,5 @@ exports.seed = async function(knex) {
   await knex('locations').insert([
     { name:' Lehi UT', zipCode: 84043},
     { name:'Orem UT', zipCode: 84057},
-
   ]);
 };
