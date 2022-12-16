@@ -11,13 +11,13 @@ router.get('/', async (req, res, next) => {
     }
 })
 
-router.post('/', async(req, res, next) =>{
-       try{
-        const newLocation = await Location.create({name: req.body.name, lat: req.body.lat, long: req.body.long})
-        res.status(201).json(newLocation)
-       }catch(err) {
-          next(err)
-       }
+router.post('/', async (req, res, next) =>{
+     try{
+        const data = await Location.create(req.body)
+        res.json(data)
+     }  catch(err) {
+        next(err)
+     }
 })
 
 router.delete('/:id', async (req, res, next)=>{
