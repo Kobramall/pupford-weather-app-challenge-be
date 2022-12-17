@@ -5,8 +5,8 @@
 exports.up = function(knex) {
   return knex.schema.createTable('locations', tbl =>{
     tbl.increments();
-    tbl.text('name', 128).unique().notNullable();
-    tbl.text('zipCode').unique().notNullable();
+    tbl.string('name')
+    tbl.string('zipCode')
   })
 };
 
